@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { Card } from './components/Card';
+import movies from './data';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <main>
+      {movies.map(movie => (
+        <Card className="mr" key={`${movie.id}`}>
+          <Card.Image src={movie.image} alt={movie.title} />
+          <Card.Body>
+            <Card.Title>{movie.title}</Card.Title>
+            <Card.Text>{movie.desc}</Card.Text>
+            <Card.Button>{movie.ctaText}</Card.Button>
+          </Card.Body>
+        </Card>
+      ))}
+    </main>
   );
 }
 
