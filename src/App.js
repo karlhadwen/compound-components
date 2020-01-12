@@ -7,7 +7,7 @@ function App() {
   return (
     <main>
       {movies.map(movie => (
-        <Card className="mr" key={`${movie.id}`}>
+        <Card classes="mr" key={`${movie.id}`}>
           <Card.Image src={movie.image} alt={movie.title} />
           <Card.Body>
             <Card.Title>{movie.title}</Card.Title>
